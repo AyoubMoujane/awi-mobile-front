@@ -42,9 +42,9 @@ class SearchJeuListViewModel:  JeuListDelegate, ObservableObject{
     @Published var jeuListState : JeuListState = .ready{
         didSet{
             switch self.jeuListState { // state has changed
-            case let .loaded(data):    // new data has been loaded, to change all tracks of playlist
+            case let .loaded(data):    // new data has been loaded, to change all games of list
                 let sortedData = data.sorted(by: { $0.name < $1.name })
-                self.model.new(jeux: sortedData)
+                new(jeux: sortedData)
             default:                   // nothing to do for ViewModel, perhaps for the view
                 return
             }
@@ -64,38 +64,19 @@ class SearchJeuListViewModel:  JeuListDelegate, ObservableObject{
         self.model.new(jeux: jeux)
     }
     
-    /// add new games to the playlist
-    /// - Parameter tracks: tracks to be added to the playlist
-    func add(jeux: [Jeu]){
-        self.model.add(jeux: jeux)
-    }
-    
     /// called when jeulist model has changed all its list of games
     func newJeuList() {
         #if DEBUG
-        debugPrint("SearchPlvm: newJeuList()")
+        debugPrint("SearchJlvm: newJeuList()")
         #endif
         self.jeux.removeAll()
         for jeu in self.model.jeux{
             self.jeux.append(JeuViewModel(jeu))
         }
         #if DEBUG
-        debugPrint("SearchPlvm: playListState = .newTracks")
+        debugPrint("SearchJlvm: jeuListState = .newJeux")
         #endif
         self.jeuListState = .newJeux(self.jeux)
-    }
-    
-    /// call when a set of tracks has been append to the playlist
-    /// - Parameter tracks: tracks to be added
-    func jeuListAdded(jeux: [Jeu]) {
-        for jeu in jeux{
-            self.jeux.append(JeuViewModel(jeu))
-        }
-        self.jeuListState = .newJeux(self.jeux)
-    }
-    
-    func jeuListModified(jeu: Jeu, index: Int) {
-        return // SearchPlaylistViewModel manages loading an entire set of tracks, not individual change of track of the list
     }
     
 }

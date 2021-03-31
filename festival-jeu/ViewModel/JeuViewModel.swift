@@ -6,15 +6,6 @@
 //
 
 import Foundation
-
-//
-//  AlbumViewModel.swift
-//  Playlist
-//
-//  Created by Christophe Fiorio on 18/02/2021.
-//
-
-import Foundation
 import SwiftUI
 
 
