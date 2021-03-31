@@ -17,7 +17,7 @@ class Festival : Identifiable, ObservableObject, Encodable, Equatable{
     
     /// id of the festival
     private(set) var id : Int
-    /// name of the track (song)
+    /// name of the festival
     private(set) var name: String
     /// date of the festival
     private(set) var date: Date
@@ -31,7 +31,7 @@ class Festival : Identifiable, ObservableObject, Encodable, Equatable{
         case estCourant = "estCourant"
     }
     
-    /// initialization of a track
+    /// initialization of a festival
     /// - Parameters:
     ///   - id: unique id
     ///   - name: name of the festival

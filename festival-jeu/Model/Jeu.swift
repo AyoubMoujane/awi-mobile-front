@@ -15,25 +15,25 @@ class Jeu : Identifiable, ObservableObject, Codable, Equatable{
         return lhs.id == rhs.id
     }
     
-    /// id of the festival
+    /// id of the game
     private(set) var id : Int
-    /// name of the track (song)
+    /// name of the game
     public var name: String
-    /// date of the festival
+    /// minimum number of players for the game
     private(set) var minPlayer: Int
-    /// date of the festival
+    /// maximum number of players of the game
     private(set) var maxPlayer: Int
-    /// date of the festival
+    /// age minimum for the game
     private(set) var age: Int
-    /// date of the festival
+    /// duration of the game
     private(set) var duration: Int
-    /// is the festival current
+    /// game instruction
     private(set) var instruction: String
-    /// date of the festival
+    /// is the game a prototype
     private(set) var avantPremiere: Bool
-    /// date of the festival
+    /// id of the game editor
     private(set) var editorFK: Int
-    /// date of the festival
+    /// id of the game type
     private(set) var typeFK: Int
     
     enum CodingKeys: String, CodingKey {
@@ -49,12 +49,6 @@ class Jeu : Identifiable, ObservableObject, Codable, Equatable{
         case typeFK = "type"
     }
     
-    /// initialization of a track
-    /// - Parameters:
-    ///   - id: unique id
-    ///   - name: name of the festival
-    ///   - date: festival date
-    ///   - estCourant: is current festival
     init(id: Int, name: String, minPlayer: Int, maxPlayer: Int, age: Int, duration: Int, instruction: String, avantPremiere: Bool, editorFK: Int, typeFK: Int){
         self.id      = id
         self.name    = name
