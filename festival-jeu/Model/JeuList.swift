@@ -12,7 +12,6 @@ protocol JeuListDelegate {
     func jeuListModified(jeu: Jeu, index: Int)
     func newJeuList()
     func jeuListAdded(jeux: [Jeu])
-    func jeuListDeleted()
 }
 
 
@@ -37,10 +36,6 @@ class JeuList : ObservableObject, Decodable{
     func add(jeux: [Jeu]){
         self.jeux.append(contentsOf: jeux)
         self.delegate?.jeuListAdded(jeux: jeux)
-    }
-    func removeAllTracks(){
-        self.jeux.removeAll()
-        self.delegate?.jeuListDeleted()
     }
 }
 

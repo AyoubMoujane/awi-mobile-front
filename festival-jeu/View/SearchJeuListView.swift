@@ -65,10 +65,6 @@ struct SearchJeuListView: View {
     @State var text = ""
     
     func stateChanged(state: JeuListState){
-        #if DEBUG
-        debugPrint("SearchListView -> searchList state : \(state)")
-        debugPrint("SearchListView -> formViewOpen=\(searchJeuList.formViewOpen)")
-        #endif
         switch state {
         case .newJeux:
             self.intent.jeuLoaded()
@@ -84,43 +80,10 @@ struct SearchJeuListView: View {
                 SearchBar(text: $text)
                 Text("Jeux")
                 Spacer()
-//                ZStack{
-//                    List{
-//                        ForEach(self.searchPlaylist.tracks.filter(filterSearch)){ track in
-//                            NavigationLink(destination: SearchPlaylistTrackDetailView(playlist: personalPlaylist, trackViewed: track)){
-//                                ListRow(track: track)
-//                            }
-//                        }
-//                    }
-//                if results.jeux.count == 0{
-//                        VStack{
-//                            Spacer()
-//                            Text("Pas de jeux")
-//                            Spacer()
-//                        }
-//                    }
-//                    ErrorView(state: searchState)
-//                }
-//                VStack{
-//                    DisclosureGroup("Search form", isExpanded: $searchPlaylist.formViewOpen){
-//                        VStack{
-//                            SearchFormDisclosureView(intent: self.intent)
-//                        }
-//                    }
-//                }
-//                .padding(10)
-//                .background(Color.backgroundForm)
-//            }
-//            .navigationTitle("Search list tracks")
             VStack{
                 Button("Chercher jeux"){
                     intent.loadData()
                 }
-//                if(self.searchState.description == ){
-//                    ProgressView()
-//                        .progressViewStyle(CircularProgressViewStyle(tint: .blue))
-//                        .scaleEffect(3)
-//                }
                 switch searchState{
                 case .loading, .loaded:
                     ProgressView()
