@@ -57,12 +57,14 @@ struct MainView: View {
     
     @Binding var showMenu: Bool
     var body: some View {
-        Button(action: {
-            withAnimation{
-                self.showMenu=true
+        ZStack{
+            Button(action: {
+                withAnimation{
+                    self.showMenu=true
+                }
+            }) {
+                Image("logo-fjm").resizable().aspectRatio(contentMode: .fit).edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             }
-        }) {
-            Text("Accueil du site mobile ")
         }
     }
 }
