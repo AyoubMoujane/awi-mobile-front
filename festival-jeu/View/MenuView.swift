@@ -45,7 +45,9 @@ struct MenuView: View {
                 Image(systemName: "person.crop.square")
                     .foregroundColor(.gray)
                     .imageScale(.large)
-                Text("Exposants")
+                NavigationLink(destination: SearchEditeurListView(searchEditeurList: SearchEditeurListViewModel(EditeurList()))){
+                    Text("Editeurs")
+                }
                     .foregroundColor(.gray)
                     .font(.headline)
             }
