@@ -17,17 +17,21 @@ class Editeur : Identifiable, ObservableObject, Codable, Equatable{
     private(set) var id : Int
     /// name of the editor
     public var name: String
+    /// games  exposed for an editor
+    public var jeux: [Jeu]
     
     
     
     enum CodingKeys: String, CodingKey {
-        case id = "idEditor"
-        case name = "nomEditor"
+        case id = "idParticipant"
+        case name = "nomParticipant"
+        case jeux = "jeux"
     }
     
-    init(id: Int, name: String){
+    init(id: Int, name: String, jeux: [Jeu]){
         self.id      = id
         self.name    = name
+        self.jeux    = jeux
     }
 
 }

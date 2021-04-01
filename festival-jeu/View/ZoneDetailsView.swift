@@ -26,6 +26,7 @@ struct ZoneDetailsView: View {
                     .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                 Text("Nombre de jeux: \(zone.jeux.count)")
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(.red)
                 Spacer()
                 ForEach(zone.jeux){ jeu in
                     VStack(alignment: .leading, spacing: 20){
@@ -40,11 +41,9 @@ struct ZoneDetailsView: View {
                     
                 }
                 Spacer()
-            }.padding(100)
+            }.padding(50)
         }
-//        .navigationBarTitle(title, displayMode: .inline)
     }
-    
 }
 
 struct ZoneDetailsView_Previews: PreviewProvider {

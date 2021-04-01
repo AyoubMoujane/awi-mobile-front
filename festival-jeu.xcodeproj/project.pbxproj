@@ -42,8 +42,9 @@
 		25F4F04626164C27005F56C6 /* SearchEditeurListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F4F04426164C27005F56C6 /* SearchEditeurListViewModel.swift */; };
 		25F4F04926164C34005F56C6 /* SearchEditeurListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F4F04826164C34005F56C6 /* SearchEditeurListView.swift */; };
 		25F4F04C26164C3F005F56C6 /* SearchEditeurListViewIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F4F04B26164C3F005F56C6 /* SearchEditeurListViewIntent.swift */; };
-		25F4F04F26164E21005F56C6 /* EditeurSimple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F4F04E26164E21005F56C6 /* EditeurSimple.swift */; };
-		25F4F05226165292005F56C6 /* JeuComplexe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F4F05126165292005F56C6 /* JeuComplexe.swift */; };
+		F9A7497526166A9000C2FD63 /* EditeurDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A7497426166A9000C2FD63 /* EditeurDetailView.swift */; };
+		F9A7498926168AE200C2FD63 /* EditeurSimple.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A7498826168AE200C2FD63 /* EditeurSimple.swift */; };
+		F9A7498C26168AEA00C2FD63 /* JeuComplexe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A7498B26168AEA00C2FD63 /* JeuComplexe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,8 +84,9 @@
 		25F4F04426164C27005F56C6 /* SearchEditeurListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchEditeurListViewModel.swift; sourceTree = "<group>"; };
 		25F4F04826164C34005F56C6 /* SearchEditeurListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchEditeurListView.swift; sourceTree = "<group>"; };
 		25F4F04B26164C3F005F56C6 /* SearchEditeurListViewIntent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchEditeurListViewIntent.swift; sourceTree = "<group>"; };
-		25F4F04E26164E21005F56C6 /* EditeurSimple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditeurSimple.swift; sourceTree = "<group>"; };
-		25F4F05126165292005F56C6 /* JeuComplexe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuComplexe.swift; sourceTree = "<group>"; };
+		F9A7497426166A9000C2FD63 /* EditeurDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditeurDetailView.swift; sourceTree = "<group>"; };
+		F9A7498826168AE200C2FD63 /* EditeurSimple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditeurSimple.swift; sourceTree = "<group>"; };
+		F9A7498B26168AEA00C2FD63 /* JeuComplexe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JeuComplexe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				25757BE426159E6100DF58D4 /* ZonesView.swift */,
 				25757BF62615AC9200DF58D4 /* SearchZoneListView.swift */,
 				25757C012615CBE400DF58D4 /* ZoneDetailsView.swift */,
+				F9A7497426166A9000C2FD63 /* EditeurDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -180,6 +183,8 @@
 		259FBA6E2609F20900E532A3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F9A7498B26168AEA00C2FD63 /* JeuComplexe.swift */,
+				F9A7498826168AE200C2FD63 /* EditeurSimple.swift */,
 				25F4F03E26164C0B005F56C6 /* Editeur.swift */,
 				25F4F03F26164C0B005F56C6 /* EditeurList.swift */,
 				259FBA6F2609F24400E532A3 /* Festival.swift */,
@@ -190,8 +195,6 @@
 				25757BFE2615C39F00DF58D4 /* JeuExpose.swift */,
 				25F4F03B26164BC1005F56C6 /* ZoneSimple.swift */,
 				25F4F03526163A07005F56C6 /* JeuExposeSimple.swift */,
-				25F4F04E26164E21005F56C6 /* EditeurSimple.swift */,
-				25F4F05126165292005F56C6 /* JeuComplexe.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -277,13 +280,12 @@
 				259FBA7A2609F65200E532A3 /* Jeu.swift in Sources */,
 				259FBA602609F13E00E532A3 /* Persistence.swift in Sources */,
 				25757BFF2615C39F00DF58D4 /* JeuExpose.swift in Sources */,
-				25F4F04F26164E21005F56C6 /* EditeurSimple.swift in Sources */,
 				25757BF72615AC9200DF58D4 /* SearchZoneListView.swift in Sources */,
-				25F4F05226165292005F56C6 /* JeuComplexe.swift in Sources */,
 				25F4F033261627F7005F56C6 /* (null) in Sources */,
 				259FBA742609F4AD00E532A3 /* SearchJeuListViewIntent.swift in Sources */,
 				25F4F04026164C0C005F56C6 /* Editeur.swift in Sources */,
 				25757BE826159EBD00DF58D4 /* Zone.swift in Sources */,
+				F9A7498C26168AEA00C2FD63 /* JeuComplexe.swift in Sources */,
 				25757C022615CBE400DF58D4 /* ZoneDetailsView.swift in Sources */,
 				259FBA592609F13A00E532A3 /* ContentView.swift in Sources */,
 				25757BE526159E6100DF58D4 /* ZonesView.swift in Sources */,
@@ -294,8 +296,10 @@
 				25757BEB26159FE200DF58D4 /* ZoneList.swift in Sources */,
 				25757BEE2615A0DB00DF58D4 /* SearchZoneListViewModel.swift in Sources */,
 				259FBA632609F13E00E532A3 /* festival_jeu.xcdatamodeld in Sources */,
+				F9A7497526166A9000C2FD63 /* EditeurDetailView.swift in Sources */,
 				259FBA702609F24400E532A3 /* Festival.swift in Sources */,
 				259FBA84260A0B1800E532A3 /* InOutHelper.swift in Sources */,
+				F9A7498926168AE200C2FD63 /* EditeurSimple.swift in Sources */,
 				259FBA8E260A0D6900E532A3 /* SearchJeuListView.swift in Sources */,
 				25F4F04926164C34005F56C6 /* SearchEditeurListView.swift in Sources */,
 				25F4F04126164C0C005F56C6 /* EditeurList.swift in Sources */,

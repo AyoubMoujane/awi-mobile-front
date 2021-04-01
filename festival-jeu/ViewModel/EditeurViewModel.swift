@@ -22,6 +22,9 @@ class EditeurViewModel: Identifiable, Equatable {
     var name: String{
         return model.name
     }
+    var jeux: [Jeu]{
+        return model.jeux
+    }
     
     init(_ editeur: Editeur){
         self.model = editeur

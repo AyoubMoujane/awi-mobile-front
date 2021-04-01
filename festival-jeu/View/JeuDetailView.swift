@@ -27,16 +27,18 @@ struct JeuDetailView: View {
                         .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                     Text("Zone: \(jeu.zone.name)")
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        .foregroundColor(.red)
+                
                     Text("Editeur: \(jeu.editeur.name)")
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        .foregroundColor(.red)
                     Spacer()
                     Text("Consignes : \(jeu.instruction)")
                     Spacer()
                     Text("Age : \(jeu.age)")
-//                        Text("Nombre Joueurs max : \(jeu.maxPlayer)")
                     Text("Nombre joueurs min : \(jeu.minPlayer)")
                     Text("Durée : \(jeu.duration) min")
-                }.padding(100)
+                }.padding(50)
             }
         }
     
