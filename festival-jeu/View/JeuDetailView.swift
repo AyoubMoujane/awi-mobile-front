@@ -31,11 +31,18 @@ struct JeuDetailView: View {
 
 }
 
-//struct JeuDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        let jvm = JeuViewModel(Jeu(id: 1, name: "Dofus", minPlayer: 1, maxPlayer: 1, age: 14, duration: 180, instruction: "Voici les instructions", avantPremiere: 0, editorFK: 2, typeFK:3))
-//        return {
-//            JeuDetailView(jvm)
-//        }
-//    }
-//}
+struct JeuDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        JeuDetailView(jeuViewed: JeuViewModel(
+                        Jeu(id: 1,
+                            name: "Dofus",
+                            minPlayer: 1,
+                            maxPlayer: 1,
+                            age: 14,
+                            duration: 180,
+                            instruction: "Voici les instructions",
+                            avantPremiere: false,
+                            editorFK: 2,
+                            typeFK:3)))
+    }
+}

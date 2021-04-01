@@ -34,7 +34,9 @@ struct MenuView: View {
                 Image(systemName: "location")
                     .foregroundColor(.gray)
                     .imageScale(.large)
-                Text("Zones")
+                NavigationLink(destination: SearchZoneListView(searchZoneList: SearchZoneListViewModel(ZoneList()))){
+                    Text("Zones")
+                }
                     .foregroundColor(.gray)
                     .font(.headline)
             }

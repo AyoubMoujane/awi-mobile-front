@@ -1,52 +1,28 @@
 //
-//  SearchJeuListView.swift
+//  SearchZoneListView.swift
 //  festival-jeu
 //
-//  Created by ayoub moujane on 23/03/2021.
+//  Created by ayoub moujane on 01/04/2021.
 //
 
 import SwiftUI
 import Foundation
 import Combine
 
-struct SearchJeuListView: View {
-    
-//    @EnvironmentObject var personalPlaylist : PersonalPlaylistViewModel
-    
-    /*
-     * If searchPlaylist is initialized here, we must ensure that intent initialized here stays the same with the initial playlist
-     * Else intent could manage another playlist if struct is reinit
-     * The way to do that is a bit complicated but possible (see solution in comment below)
-     * So the best is to pass searchPlaylist in parameter so, even if struct is reinit and intent recreated, it will manage the good searchplaylist
-     *
-    // MUST be a StateObject to stay the same and not being reallocated if struct is reinit
-    @StateObject var searchPlaylist : SearchPlaylistViewModel
-    // MUST be a StateObject to stay the same and not being reallocated if struct is reinit
-    @StateObject var intent : SearchListViewIntent
+struct SearchZoneListView: View {
 
+    @ObservedObject var searchZoneList : SearchZoneListViewModel
+    var intent : SearchZoneListViewIntent
     
-    /// initialize view: create the search playlist and the intent of the view
-    init(){
-        let playlist    = SearchPlaylistViewModel(Playlist()) // create a searchList
-        _searchPlaylist = StateObject(wrappedValue: playlist) // if searchPlaylist has already been allocated, this statement has no effect
-        _intent         = StateObject(wrappedValue: SearchListViewIntent(playlist: playlist)) // same thing for intent
-        // note : if intent whas not a StateObject, when struct is reallocated, a new intent is created with local playlist created here, and so
-        // intent will no more manage the initial playlist!
-    }
-     */
-    
-    @ObservedObject var searchJeuList : SearchJeuListViewModel
-    var intent : SearchJeuListViewIntent
-    
-    init(searchJeuList: SearchJeuListViewModel){
-        self.searchJeuList = searchJeuList
-        self.intent = SearchJeuListViewIntent(jeuList: searchJeuList)
-        let _  = self.searchJeuList.$jeuListState.sink(receiveValue: stateChanged)
+    init(searchZoneList: SearchZoneListViewModel){
+        self.searchZoneList = searchZoneList
+        self.intent = SearchZoneListViewIntent(zoneList: searchZoneList)
+        let _  = self.searchZoneList.$zoneListState.sink(receiveValue: stateChanged)
     }
 
 
-    private var searchState : JeuListState{
-        return self.searchJeuList.jeuListState
+    private var searchState : ZoneListState{
+        return self.searchZoneList.zoneListState
     }
     
     @State private var showModal      = false
@@ -58,16 +34,16 @@ struct SearchJeuListView: View {
     @State var dumbPresented : Bool = true
     
     
-    var jeux : [JeuViewModel] {
-        return self.searchJeuList.jeux
+    var zones : [ZoneViewModel] {
+        return self.searchZoneList.zones
     }
     
     @State var text = ""
     
-    func stateChanged(state: JeuListState){
+    func stateChanged(state: ZoneListState){
         switch state {
-        case .newJeux:
-            self.intent.jeuLoaded()
+        case .newZones:
+            self.intent.zoneLoaded()
         default:
             break
         }
@@ -78,10 +54,10 @@ struct SearchJeuListView: View {
         return NavigationView{
             VStack{
                 SearchBar(text: $text)
-                Text("Jeux")
+                Text("Zones")
                 Spacer()
             VStack{
-                Button("Chercher jeux"){
+                Button("Chercher zones"){
                     intent.loadData()
                 }
                 switch searchState{
@@ -89,25 +65,27 @@ struct SearchJeuListView: View {
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle(tint: .green))
                         .scaleEffect(3)
+                case .loadingError:
+                    Text("Error")
                 default:
                     EmptyView()
                 }
                 
                 List {
-                    if (searchJeuList.jeux.count == 0) {
+                    if (searchZoneList.zones.count == 0) {
                         VStack{
                             Spacer()
-                            Text("Pas de jeux disponibles")
+                            Text("Pas de zones disponibles")
                             Spacer()
                         }
                     } else {
                         
-                        ForEach(searchJeuList.jeux.filter({
+                        ForEach(searchZoneList.zones.filter({
                             "\($0.name)".contains(text) || text.isEmpty
                         })) { jeu in
-                            NavigationLink(destination: JeuDetailView(jeuViewed: jeu)){
+//                            NavigationLink(destination: JeuDetailView(jeuViewed: jeu)){
                                 Text("\(jeu.name)")
-                            }
+//                            }
                         }
                     }
                 }
@@ -117,9 +95,9 @@ struct SearchJeuListView: View {
     }
 }
 
-struct SearchJeuListView_Previews: PreviewProvider {
+struct SearchZoneListView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchJeuListView(searchJeuList: SearchJeuListViewModel(JeuList()))
+        SearchZoneListView(searchZoneList: SearchZoneListViewModel(ZoneList()) )
     }
 }
 
