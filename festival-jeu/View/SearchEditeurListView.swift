@@ -82,8 +82,10 @@ struct SearchEditeurListView: View {
                         ForEach(searchEditeurList.editeurs.filter({
                             "\($0.name)".contains(text) || text.isEmpty
                         })) { editeur in
+                            NavigationLink(destination: EditeurDetailView(editeurViewed: editeur)){
                                 Text("\(editeur.name)")
                             }
+                        }
                     }
                 }
             }
