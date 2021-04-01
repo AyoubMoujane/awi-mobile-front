@@ -50,7 +50,6 @@ struct SearchZoneListView: View {
     }
     
     var body: some View {
-//        stateChanged(state: searchPlaylist.playListState)
         return NavigationView{
             VStack{
                 SearchBar(text: $text)
@@ -100,21 +99,6 @@ struct SearchZoneListView_Previews: PreviewProvider {
         SearchZoneListView(searchZoneList: SearchZoneListViewModel(ZoneList()) )
     }
 }
-
-//struct ListRow : View{
-//    let track : TrackViewModel
-//    var body: some View{
-//        HStack{
-//            track.image.smallSquare()
-//            VStack(alignment: .leading){
-//                if let name = track.name { Text(name).font(.title2) }
-//                Text(track.album)
-//                    .font(.headline)
-//                Text(track.artist)
-//            }
-//        }
-//    }
-//}
 
 //struct ErrorView : View{
 //    let state : SearchPlayListState

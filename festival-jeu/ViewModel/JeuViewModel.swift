@@ -14,36 +14,40 @@ class JeuViewModel: Identifiable, Equatable {
         return lhs.id == rhs.id
     }
     
-    @ObservedObject private(set) var model : Jeu
+    @ObservedObject private(set) var model : JeuExpose
     
     var id : Int{
         return model.id
     }
     var name: String{
-        return model.name
+        return model.jeu.name
     }
     var minPlayer: Int{
-        return model.minPlayer
+        return model.jeu.minPlayer
     }
     var maxPlayer: Int{
-        return model.maxPlayer
+        return model.jeu.maxPlayer
     }
     var age: Int{
-        return model.age
+        return model.jeu.age
     }
     var duration: Int{
-        return model.duration
+        return model.jeu.duration
     }
     var instruction: String{
-        return model.instruction
+        return model.jeu.instruction
     }
     var editorFK: Int{
-        return model.editorFK
+        return model.jeu.editorFK
     }
     var typeFK: Int{
-        return model.typeFK
+        return model.jeu.typeFK
     }
-    init(_ jeu: Jeu){
+    var zone: ZoneSimple{
+        return model.zone
+    }
+    
+    init(_ jeu: JeuExpose){
         self.model = jeu
     }
     

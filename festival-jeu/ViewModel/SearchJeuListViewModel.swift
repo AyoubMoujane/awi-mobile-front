@@ -14,7 +14,7 @@ import Combine
 enum JeuListState : CustomStringConvertible{
     case ready
     case loading(String)
-    case loaded([Jeu])
+    case loaded([JeuExpose])
     case loadingError(Error)
     case newJeux([JeuViewModel])
 
@@ -43,7 +43,7 @@ class SearchJeuListViewModel:  JeuListDelegate, ObservableObject{
         didSet{
             switch self.jeuListState { // state has changed
             case let .loaded(data):    // new data has been loaded, to change all games of list
-                let sortedData = data.sorted(by: { $0.name < $1.name })
+                let sortedData = data.sorted(by: { $0.jeu.name < $1.jeu.name })
                 new(jeux: sortedData)
             default:                   // nothing to do for ViewModel, perhaps for the view
                 return
@@ -60,7 +60,7 @@ class SearchJeuListViewModel:  JeuListDelegate, ObservableObject{
     
     /// new list of games for the list
     /// - Parameter jeux: games that will compose the list
-    func new(jeux: [Jeu]){
+    func new(jeux: [JeuExpose]){
         self.model.new(jeux: jeux)
     }
     

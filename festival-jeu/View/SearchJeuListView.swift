@@ -92,7 +92,6 @@ struct SearchJeuListView: View {
                 default:
                     EmptyView()
                 }
-                
                 List {
                     if (searchJeuList.jeux.count == 0) {
                         VStack{

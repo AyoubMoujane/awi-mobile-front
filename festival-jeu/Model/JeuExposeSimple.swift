@@ -1,5 +1,5 @@
 //
-//  JeuExpose.swift
+//  JeuExposeSimple.swift
 //  festival-jeu
 //
 //  Created by ayoub moujane on 01/04/2021.
@@ -10,8 +10,8 @@ import SwiftUI
 import Combine
 
 
-class JeuExpose : Identifiable, ObservableObject, Codable, Equatable{
-    static func == (lhs: JeuExpose, rhs: JeuExpose) -> Bool {
+class JeuExposeSimple : Identifiable, ObservableObject, Codable, Equatable{
+    static func == (lhs: JeuExposeSimple, rhs: JeuExposeSimple) -> Bool {
         return lhs.id == rhs.id
     }
     
@@ -21,21 +21,17 @@ class JeuExpose : Identifiable, ObservableObject, Codable, Equatable{
     public var quantiteExpose: Int?
     /// game presented
     public var jeu: Jeu
-    /// zone in which the game is
-    public var zone: ZoneSimple
     
     enum CodingKeys: String, CodingKey {
         case id = "idReservation"
         case quantiteExpose = "quantiteExpose"
         case jeu = "jeu"
-        case zone = "Zone"
     }
     
-    init(id: Int, quantiteExpose: Int, jeu: Jeu, zone: ZoneSimple){
+    init(id: Int, quantiteExpose: Int, jeu: Jeu){
         self.id      = id
         self.quantiteExpose = quantiteExpose
         self.jeu = jeu
-        self.zone = zone
     }
 
 }
