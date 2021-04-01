@@ -21,7 +21,11 @@ struct JeuDetailView: View {
         return VStack{
                 Spacer()
             Text("Nom du jeu : \(jeu.name)")
-            Text("Consignes :\(jeu.instruction)")
+            Text("Consignes : \(jeu.instruction)")
+            Text("Age : \(jeu.age)")
+//            Text("Nombre Joueurs max : \(jeu.maxPlayer)")
+            Text("Nombre Joueurs min : \(jeu.minPlayer)")
+            Text("Durée : \(jeu.duration) min")
                 Spacer()
             Spacer()
         }
