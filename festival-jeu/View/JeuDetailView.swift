@@ -38,9 +38,7 @@ struct JeuDetailView: View {
                     Text("Durée : \(jeu.duration) min")
                 }.padding(100)
             }
-            
-//        .navigationBarTitle(title, displayMode: .inline)
-    }
+        }
     
 
 }

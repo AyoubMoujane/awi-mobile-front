@@ -15,23 +15,36 @@ struct ZoneDetailsView: View {
     init(zoneViewed: ZoneViewModel){
         self.zone = zoneViewed
     }
-        
+
     var body: some View {
-        return VStack{
+        return ScrollView(){
+            VStack(alignment: .leading, spacing: 20){
                 Spacer()
-            Text("Nom Zone: \(zone.name)")
-            Text("Nombre de jeux dans la zone :\(zone.jeux.count)")
-            Spacer()
-            ForEach(zone.jeux){ jeu in
-                Text("Nom : \(jeu.jeu.name)")
-                Text("Consignes: \(jeu.jeu.instruction)")
-            }
-            Spacer()
+                Text("\(zone.name)")
+                    .font(.largeTitle)
+                    .fontWeight(.heavy)
+                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                Text("Nombre de jeux: \(zone.jeux.count)")
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                Spacer()
+                ForEach(zone.jeux){ jeu in
+                    VStack(alignment: .leading, spacing: 20){
+                        Spacer()
+                        Text("Jeu: \(jeu.jeu.name)")
+                        if let qte=jeu.quantiteExpose{
+                            Text("quantité présentée: \(qte)")
+                        }
+                        Text("Durée partie: \(jeu.jeu.duration) min")
+                        Spacer()
+                    }
+                    
+                }
+                Spacer()
+            }.padding(100)
         }
 //        .navigationBarTitle(title, displayMode: .inline)
     }
     
-
 }
 
 struct ZoneDetailsView_Previews: PreviewProvider {
