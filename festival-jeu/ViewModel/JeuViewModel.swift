@@ -37,9 +37,6 @@ class JeuViewModel: Identifiable, Equatable {
     var instruction: String{
         return model.instruction
     }
-    var avantPremiere : Bool{
-        return model.avantPremiere
-    }
     var editorFK: Int{
         return model.editorFK
     }

@@ -22,7 +22,7 @@ class Zone : Identifiable, ObservableObject, Codable, Equatable{
     /// id of the festival the zone belongs to
     private(set) var festivalFK: Int
     /// games in the zone
-    public var jeux: [Jeu]
+    public var jeux: [JeuExpose]
     
     enum CodingKeys: String, CodingKey {
         case id = "idZone"
@@ -31,7 +31,7 @@ class Zone : Identifiable, ObservableObject, Codable, Equatable{
         case jeux = "jeux"
     }
     
-    init(id: Int, name: String, festivalFK: Int, jeux: [Jeu]){
+    init(id: Int, name: String, festivalFK: Int, jeux: [JeuExpose]){
         self.id      = id
         self.name    = name
         self.festivalFK = festivalFK

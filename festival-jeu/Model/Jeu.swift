@@ -29,8 +29,6 @@ class Jeu : Identifiable, ObservableObject, Codable, Equatable{
     private(set) var duration: Int
     /// game instruction
     private(set) var instruction: String
-    /// is the game a prototype
-    private(set) var avantPremiere: Bool
     /// id of the game editor
     private(set) var editorFK: Int
     /// id of the game type
@@ -44,12 +42,11 @@ class Jeu : Identifiable, ObservableObject, Codable, Equatable{
         case age = "age"
         case duration = "duree"
         case instruction = "consigne"
-        case avantPremiere = "prototype"
         case editorFK = "editeur"
         case typeFK = "type"
     }
     
-    init(id: Int, name: String, minPlayer: Int, maxPlayer: Int, age: Int, duration: Int, instruction: String, avantPremiere: Bool, editorFK: Int, typeFK: Int){
+    init(id: Int, name: String, minPlayer: Int, maxPlayer: Int, age: Int, duration: Int, instruction: String, editorFK: Int, typeFK: Int){
         self.id      = id
         self.name    = name
         self.minPlayer   = minPlayer
@@ -57,7 +54,6 @@ class Jeu : Identifiable, ObservableObject, Codable, Equatable{
         self.age = age
         self.duration = duration
         self.instruction = instruction
-        self.avantPremiere = avantPremiere
         self.editorFK = editorFK
         self.typeFK = typeFK
     }

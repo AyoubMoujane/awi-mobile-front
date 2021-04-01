@@ -22,7 +22,7 @@ class ZoneViewModel: Identifiable, Equatable {
     var name: String{
         return model.name
     }
-    var jeux: [Jeu]{
+    var jeux: [JeuExpose]{
         return model.jeux
     }
     init(_ zone: Zone){

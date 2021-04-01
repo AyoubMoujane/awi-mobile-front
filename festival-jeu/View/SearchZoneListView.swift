@@ -82,10 +82,10 @@ struct SearchZoneListView: View {
                         
                         ForEach(searchZoneList.zones.filter({
                             "\($0.name)".contains(text) || text.isEmpty
-                        })) { jeu in
-//                            NavigationLink(destination: JeuDetailView(jeuViewed: jeu)){
-                                Text("\(jeu.name)")
-//                            }
+                        })) { zone in
+                            NavigationLink(destination: ZoneDetailsView(zoneViewed: zone)){
+                                Text("\(zone.name)")
+                            }
                         }
                     }
                 }

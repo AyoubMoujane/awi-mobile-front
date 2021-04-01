@@ -41,7 +41,6 @@ struct JeuDetailView_Previews: PreviewProvider {
                             age: 14,
                             duration: 180,
                             instruction: "Voici les instructions",
-                            avantPremiere: false,
                             editorFK: 2,
                             typeFK:3)))
     }
