@@ -21,9 +21,9 @@ class JeuList : ObservableObject, Decodable{
     
     var delegate : JeuListDelegate?
 
-    private(set) var jeux = [Jeu]()
+    private(set) var jeux = [JeuExpose]()
     
-    func new(jeux: [Jeu]){
+    func new(jeux: [JeuExpose]){
         self.jeux = jeux
         self.delegate?.newJeuList()
     }

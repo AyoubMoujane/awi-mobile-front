@@ -1,5 +1,5 @@
 //
-//  Zone.swift
+//  ZoneSimple.swift
 //  festival-jeu
 //
 //  Created by ayoub moujane on 01/04/2021.
@@ -10,8 +10,8 @@ import SwiftUI
 import Combine
 
 
-class Zone : Identifiable, ObservableObject, Codable, Equatable{
-    static func == (lhs: Zone, rhs: Zone) -> Bool {
+class ZoneSimple : Identifiable, ObservableObject, Codable, Equatable{
+    static func == (lhs: ZoneSimple, rhs: ZoneSimple) -> Bool {
         return lhs.id == rhs.id
     }
     
@@ -21,21 +21,17 @@ class Zone : Identifiable, ObservableObject, Codable, Equatable{
     public var name: String
     /// id of the festival the zone belongs to
     private(set) var festivalFK: Int
-    /// games in the zone
-    public var jeux: [JeuExposeSimple]
     
     enum CodingKeys: String, CodingKey {
         case id = "idZone"
         case name = "nomZone"
         case festivalFK = "festivalFK"
-        case jeux = "jeux"
     }
     
-    init(id: Int, name: String, festivalFK: Int, jeux: [JeuExposeSimple]){
+    init(id: Int, name: String, festivalFK: Int){
         self.id      = id
         self.name    = name
         self.festivalFK = festivalFK
-        self.jeux = jeux
     }
 
 }

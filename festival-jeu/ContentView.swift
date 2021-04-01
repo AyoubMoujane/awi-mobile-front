@@ -62,7 +62,7 @@ struct MainView: View {
                 self.showMenu=true
             }
         }) {
-            Text("Accueil du site mobile")
+            Text("Accueil du site mobile ")
         }
     }
 }
