@@ -43,6 +43,10 @@ class JeuViewModel: Identifiable, Equatable {
     var typeFK: Int{
         return model.jeu.typeFK
     }
+    var zone: ZoneSimple{
+        return model.zone
+    }
+    
     init(_ jeu: JeuExpose){
         self.model = jeu
     }

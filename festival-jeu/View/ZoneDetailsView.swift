@@ -57,8 +57,8 @@ struct ZoneDetailsView_Previews: PreviewProvider {
                         editorFK: 2,
                         typeFK:3)
         
-        let jeuExp1 = JeuExpose(id:1,quantiteExpose:5,jeu: jeu1)
-        let jeuExp2 = JeuExpose(id:2,quantiteExpose:10,jeu: jeu2)
+        let jeuExp1 = JeuExposeSimple(id:1,quantiteExpose:5,jeu: jeu1)
+        let jeuExp2 = JeuExposeSimple(id:2,quantiteExpose:10,jeu: jeu2)
         
         ZoneDetailsView(zoneViewed: ZoneViewModel(Zone(id:1,name:"Zone A",festivalFK:1,
                                                        jeux:[jeuExp1,jeuExp2]

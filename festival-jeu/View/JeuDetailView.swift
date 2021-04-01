@@ -26,6 +26,7 @@ struct JeuDetailView: View {
 //            Text("Nombre Joueurs max : \(jeu.maxPlayer)")
             Text("Nombre Joueurs min : \(jeu.minPlayer)")
             Text("Durée : \(jeu.duration) min")
+            Text("Zone: \(jeu.zone.name)")
                 Spacer()
             Spacer()
         }
@@ -47,7 +48,10 @@ struct JeuDetailView_Previews: PreviewProvider {
                                            duration: 180,
                                            instruction: "Voici les instructions",
                                            editorFK: 2,
-                                           typeFK:3))
+                                           typeFK:3
+                                           )
+                                  , zone: ZoneSimple(id: 1, name: "Zone A", festivalFK: 2)
+                        )
                         ))
     }
 }
