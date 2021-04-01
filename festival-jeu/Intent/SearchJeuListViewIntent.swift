@@ -25,7 +25,7 @@ class SearchJeuListViewIntent{
         self.jeuList.jeuListState = .ready
     }
     
-    func httpJsonLoaded(result: Result<[Jeu], HttpRequestError>){
+    func httpJsonLoaded(result: Result<[JeuExpose], HttpRequestError>){
         switch result {
         case let .success(data):
             #if DEBUG
@@ -64,18 +64,18 @@ class SearchJeuListViewIntent{
     
     func loadData() {
         
-        var re = [Jeu]()
+        var re = [JeuExpose]()
 
         
-        jeuList.jeuListState = .loading("http://localhost:8080/api/jeux")
-        let surl = "http://localhost:8080/api/jeux"
+        jeuList.jeuListState = .loading("http://localhost:8080/api/custom/jeuxExposes")
+        let surl = "http://localhost:8080/api/custom/jeuxExposes"
         guard let url = URL(string: surl) else { print("rien"); return }
         let request = URLRequest(url: url)
         URLSession.shared.dataTask(with: request) { data,response,error in
             guard let data = data else{return}
 
             do{
-                re = try JSONDecoder().decode([Jeu].self, from: data)
+                re = try JSONDecoder().decode([JeuExpose].self, from: data)
                 DispatchQueue.main.async { // met dans la file d'attente du thread principal l'action qui suit
                     self.jeuList.jeuListState = .loaded(re)
                 }

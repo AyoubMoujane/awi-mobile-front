@@ -34,14 +34,16 @@ struct JeuDetailView: View {
 struct JeuDetailView_Previews: PreviewProvider {
     static var previews: some View {
         JeuDetailView(jeuViewed: JeuViewModel(
-                        Jeu(id: 1,
-                            name: "Dofus",
-                            minPlayer: 1,
-                            maxPlayer: 1,
-                            age: 14,
-                            duration: 180,
-                            instruction: "Voici les instructions",
-                            editorFK: 2,
-                            typeFK:3)))
+                        JeuExpose(id: 1, quantiteExpose: 5,
+                                  jeu: Jeu(id: 1,
+                                           name: "Dofus",
+                                           minPlayer: 1,
+                                           maxPlayer: 1,
+                                           age: 14,
+                                           duration: 180,
+                                           instruction: "Voici les instructions",
+                                           editorFK: 2,
+                                           typeFK:3))
+                        ))
     }
 }
