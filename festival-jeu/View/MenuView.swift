@@ -23,9 +23,11 @@ struct MenuView: View {
                 Image(systemName: "gamecontroller")
                     .foregroundColor(.gray)
                     .imageScale(.large)
-                Text("Jeux")
-                    .foregroundColor(.gray)
-                    .font(.headline)
+                NavigationLink(destination: SearchJeuListView(searchJeuList: SearchJeuListViewModel(JeuList()))){
+                    Text("Jeux")
+                        .foregroundColor(.gray)
+                        .font(.headline)
+                }
             }
             .padding(.top,30)
             HStack{
