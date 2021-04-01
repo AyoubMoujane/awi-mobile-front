@@ -18,18 +18,27 @@ struct JeuDetailView: View {
     }
         
     var body: some View {
-        return VStack{
-                Spacer()
-            Text("Nom du jeu : \(jeu.name)")
-            Text("Consignes : \(jeu.instruction)")
-            Text("Age : \(jeu.age)")
-//            Text("Nombre Joueurs max : \(jeu.maxPlayer)")
-            Text("Nombre Joueurs min : \(jeu.minPlayer)")
-            Text("Durée : \(jeu.duration) min")
-            Text("Zone: \(jeu.zone.name)")
-                Spacer()
-            Spacer()
-        }
+        
+        return  ScrollView(){
+            VStack(alignment: .leading, spacing: 20){
+                    Text("\(jeu.name)")
+                        .font(.largeTitle)
+                        .fontWeight(.heavy)
+                        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                    Text("Zone: \(jeu.zone.name)")
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    Text("Editeur: \(jeu.editeur.name)")
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    Spacer()
+                    Text("Consignes : \(jeu.instruction)")
+                    Spacer()
+                    Text("Age : \(jeu.age)")
+//                        Text("Nombre Joueurs max : \(jeu.maxPlayer)")
+                    Text("Nombre joueurs min : \(jeu.minPlayer)")
+                    Text("Durée : \(jeu.duration) min")
+                }.padding(100)
+            }
+            
 //        .navigationBarTitle(title, displayMode: .inline)
     }
     
@@ -40,7 +49,7 @@ struct JeuDetailView_Previews: PreviewProvider {
     static var previews: some View {
         JeuDetailView(jeuViewed: JeuViewModel(
                         JeuExpose(id: 1, quantiteExpose: 5,
-                                  jeu: Jeu(id: 1,
+                                  jeu: JeuComplexe(id: 1,
                                            name: "Dofus",
                                            minPlayer: 1,
                                            maxPlayer: 1,
@@ -48,9 +57,11 @@ struct JeuDetailView_Previews: PreviewProvider {
                                            duration: 180,
                                            instruction: "Voici les instructions",
                                            editorFK: 2,
-                                           typeFK:3
+                                           typeFK:3,
+                                           editeurSimple: EditeurSimple(id: 1, name: "ANKAMA")
                                            )
-                                  , zone: ZoneSimple(id: 1, name: "Zone A", festivalFK: 2)
+                                  ,zone: ZoneSimple(id: 1, name: "Zone A", festivalFK: 2)
+                                  
                         )
                         ))
     }

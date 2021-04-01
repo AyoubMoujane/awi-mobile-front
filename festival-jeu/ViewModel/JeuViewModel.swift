@@ -46,6 +46,9 @@ class JeuViewModel: Identifiable, Equatable {
     var zone: ZoneSimple{
         return model.zone
     }
+    var editeur: EditeurSimple{
+        return model.jeu.editeurSimple
+    }
     
     init(_ jeu: JeuExpose){
         self.model = jeu

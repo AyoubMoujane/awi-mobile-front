@@ -20,7 +20,7 @@ class JeuExpose : Identifiable, ObservableObject, Codable, Equatable{
     /// number of displayed games
     public var quantiteExpose: Int?
     /// game presented
-    public var jeu: Jeu
+    public var jeu: JeuComplexe
     /// zone in which the game is
     public var zone: ZoneSimple
     
@@ -31,7 +31,7 @@ class JeuExpose : Identifiable, ObservableObject, Codable, Equatable{
         case zone = "Zone"
     }
     
-    init(id: Int, quantiteExpose: Int, jeu: Jeu, zone: ZoneSimple){
+    init(id: Int, quantiteExpose: Int, jeu: JeuComplexe, zone: ZoneSimple){
         self.id      = id
         self.quantiteExpose = quantiteExpose
         self.jeu = jeu
