@@ -61,8 +61,8 @@ class SearchZoneListViewIntent{
         var re = [Zone]()
 
         
-        zoneList.zoneListState = .loading("http://localhost:8080/api/zones/custom/courant")
-        let surl = "http://localhost:8080/api/zones/custom/courant"
+        zoneList.zoneListState = .loading("http://15.236.140.17:8080/api/zones/custom/courant")
+        let surl = "http://15.236.140.17:8080/api/zones/custom/courant"
         guard let url = URL(string: surl) else { print("rien"); return }
         let request = URLRequest(url: url)
         URLSession.shared.dataTask(with: request) { data,response,error in

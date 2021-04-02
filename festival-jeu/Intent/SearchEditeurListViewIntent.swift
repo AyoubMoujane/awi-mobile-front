@@ -63,8 +63,8 @@ class SearchEditeurListViewIntent{
         var re = [Editeur]()
 
         
-        editeurList.editeurListState = .loading("http://localhost:8080/api/custom/participants")
-        let surl = "http://localhost:8080/api/custom/participants"
+        editeurList.editeurListState = .loading("http://15.236.140.17:8080//api/custom/participants")
+        let surl = "http://15.236.140.17:8080//api/custom/participants"
         guard let url = URL(string: surl) else { print("rien"); return }
         let request = URLRequest(url: url)
         URLSession.shared.dataTask(with: request) { data,response,error in

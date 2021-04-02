@@ -67,8 +67,8 @@ class SearchJeuListViewIntent{
         var re = [JeuExpose]()
 
         
-        jeuList.jeuListState = .loading("http://localhost:8080/api/custom/jeuxExposes")
-        let surl = "http://localhost:8080/api/custom/jeuxExposes"
+        jeuList.jeuListState = .loading("http://15.236.140.17:8080/api/custom/jeuxExposes")
+        let surl = "http://15.236.140.17:8080/api/custom/jeuxExposes"
         guard let url = URL(string: surl) else { print("rien"); return }
         let request = URLRequest(url: url)
         URLSession.shared.dataTask(with: request) { data,response,error in

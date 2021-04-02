@@ -36,14 +36,14 @@
             landmarkType = "3">
             <Locations>
                <Location
-                  uuid = "8EBF6060-50E0-4EEE-B426-498C1A4799D3 - 20c36ae8c490b28e"
+                  uuid = "8EBF6060-50E0-4EEE-B426-498C1A4799D3 - 29551049ed69c455"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "festival_jeu.JeuExpose.deinit"
                   moduleName = "festival-jeu"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ayoubmoujane/Desktop/IG4_S8/DEV_MOBILE/festival-jeu/festival-jeu/Model/JeuExpose.swift"
+                  urlString = "file:///Users/ayoubmoujane/Desktop/awi-mobile-front/festival-jeu/Model/JeuExpose.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -51,14 +51,14 @@
                   offsetFromSymbolStart = "16">
                </Location>
                <Location
-                  uuid = "8EBF6060-50E0-4EEE-B426-498C1A4799D3 - ca976409b0f542a3"
+                  uuid = "8EBF6060-50E0-4EEE-B426-498C1A4799D3 - c3011ea8990c3478"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "festival_jeu.JeuExpose.__deallocating_deinit"
                   moduleName = "festival-jeu"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ayoubmoujane/Desktop/IG4_S8/DEV_MOBILE/festival-jeu/festival-jeu/Model/JeuExpose.swift"
+                  urlString = "file:///Users/ayoubmoujane/Desktop/awi-mobile-front/festival-jeu/Model/JeuExpose.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
